@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://jk6jr3jn7qqy"]
+
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_axw1o"]
+[ext_resource type="Texture2D" uid="uid://brboer6j2ukb2" path="res://sprites/sandbox.png" id="2_ffrko"]
+[ext_resource type="PackedScene" uid="uid://10a7wq5hjg3w" path="res://scenes/player.tscn" id="2_na3cn"]
+[ext_resource type="PackedScene" uid="uid://8882o6sgl01m" path="res://scenes/health_1.tscn" id="5_6lqmi"]
+[ext_resource type="PackedScene" uid="uid://bwbw20gse1yo5" path="res://scenes/enemy.tscn" id="6_6qkjq"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_axw1o")
+
+[node name="Sand_backround" type="Sprite2D" parent="."]
+light_mask = 0
+position = Vector2(503, 451)
+scale = Vector2(1.1045, 0.997222)
+texture = ExtResource("2_ffrko")
+region_enabled = true
+region_rect = Rect2(0, 0, 1000, 900)
+
+[node name="Player" parent="." instance=ExtResource("2_na3cn")]
+position = Vector2(403, 689)
+
+[node name="Enemy" parent="." instance=ExtResource("6_6qkjq")]
+position = Vector2(421, -109)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(717, -53)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(907, -52)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.5
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 3.5
+
+[node name="enemy" type="Node2D" parent="."]
+
+[node name="Health1" parent="." instance=ExtResource("5_6lqmi")]
+position = Vector2(-146, 606)
+
+[connection signal="spawn_crayon" from="Player" to="." method="_on_player_spawn_crayon"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]

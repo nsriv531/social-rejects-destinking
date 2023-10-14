@@ -11,7 +11,7 @@ var hp = 3
 
 @onready var muzzle = $Muzzle
 @onready var kid = $Sprite2D/AnimationPlayer
-
+@onready var health1 = $Health1
 
 func _physics_process(delta):
 	kid.play("kid_small")
@@ -25,6 +25,8 @@ func _physics_process(delta):
 	
 func take_damage(damage):
 	hp -= damage
+	if hp == 3 :
+		$Health1.hide()
 	if hp <= 0:
 		queue_free()
 
@@ -35,6 +37,9 @@ func _on_area_entered(area):
 func shoot_crayon():
 	emit_signal("spawn_crayon", muzzle.global_position)
 
+
+	
+	
 	
 
 

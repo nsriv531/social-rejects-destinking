@@ -6,6 +6,20 @@
 
 [sub_resource type="GDScript" id="GDScript_m5yw7"]
 script/source = "extends Control
+
+func _physics_process(_delta):
+	if Input.get_action_strength(\"shoot\"):
+		on_button_press()
+	
+func on_button_press():
+	get_tree().change_scene_to_file(\"res://scenes/world.tscn\")
+
+
+
+
+
+func _on_level_select_pressed():
+	get_tree().change_scene_to_file(\"res://scenes/level_select.tscn\")
 "
 
 [node name="main_menu" type="Control"]
@@ -33,3 +47,16 @@ theme_override_fonts/font = ExtResource("2_25gsi")
 theme_override_font_sizes/font_size = 27
 text = "-PRESS SPACE TO START-"
 script = ExtResource("3_a4606")
+
+[node name="level_select" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 91.0
+offset_top = 783.0
+offset_right = 277.0
+offset_bottom = 843.0
+theme_override_fonts/font = ExtResource("2_25gsi")
+theme_override_font_sizes/font_size = 27
+text = "LEVEL SELECT"
+
+[connection signal="pressed" from="level_select" to="." method="_on_level_select_pressed"]
