@@ -26,30 +26,13 @@ func _on_player_spawn_crayon(location):
 func _on_wall_right_body_entered(body):
 	if body.is_in_group("Player"):
 		global_position = Vector2(40, 861)
-
-'''func level_detect():
-	if get_tree().current_scene.name == "L1":
-		enemies_destroyed(10)
-		
-	if get_tree().current_scene.name == "L2":
-		enemies_destroyed(5)
-		level_switch(enemies_destroyed)
-	if get_tree().current_scene.name == "L3":
-		enemies_destroyed(1)
-		level_switch(enemies_destroyed)
-	if get_tree().current_scene.name == "L4":
-		enemies_destroyed(20)
-		level_switch(enemies_destroyed)
-	if get_tree().current_scene.name == "L5":
-		enemies_destroyed(1)
-		level_switch(enemies_destroyed)
 		
 func enemies_destroyed(enemy_counter):
 	counter = enemy_counter 
 	while counter > 0 :
 		if enemy_destroyed:
 			counter = counter - 1
-	return enemy_counter'''
+	get_tree().change_scene_to_file("res://scenes/L2.tscn")
 	
 func level_switch(level):
 	if level == 10:
