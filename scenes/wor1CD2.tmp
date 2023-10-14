@@ -1,20 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://jk6jr3jn7qqy"]
+[gd_scene load_steps=6 format=3 uid="uid://jk6jr3jn7qqy"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_axw1o"]
 [ext_resource type="Texture2D" uid="uid://brboer6j2ukb2" path="res://sprites/sandbox.png" id="2_ffrko"]
 [ext_resource type="PackedScene" uid="uid://10a7wq5hjg3w" path="res://scenes/player.tscn" id="2_na3cn"]
-[ext_resource type="Texture2D" uid="uid://dwqf2ffnncswk" path="res://sprites/health.png" id="5_e82mx"]
+[ext_resource type="PackedScene" uid="uid://8882o6sgl01m" path="res://scenes/health_1.tscn" id="5_6lqmi"]
 [ext_resource type="PackedScene" uid="uid://bwbw20gse1yo5" path="res://scenes/enemy.tscn" id="6_6qkjq"]
-
-[sub_resource type="GDScript" id="GDScript_kf8jv"]
-script/source = "extends Sprite2D
-
-var health = 2
-
-	
-		
-	
-"
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_axw1o")
@@ -47,21 +37,8 @@ wait_time = 3.5
 
 [node name="enemy" type="Node2D" parent="."]
 
-[node name="Health1" type="Sprite2D" parent="."]
-position = Vector2(80, 832)
-scale = Vector2(6, 4.5)
-texture = ExtResource("5_e82mx")
-script = SubResource("GDScript_kf8jv")
-
-[node name="Health2" type="Sprite2D" parent="."]
-position = Vector2(162, 828)
-scale = Vector2(6, 4.5)
-texture = ExtResource("5_e82mx")
-
-[node name="Health3" type="Sprite2D" parent="."]
-position = Vector2(250, 828)
-scale = Vector2(6, 4.5)
-texture = ExtResource("5_e82mx")
+[node name="Health1" parent="." instance=ExtResource("5_6lqmi")]
+position = Vector2(-146, 606)
 
 [connection signal="spawn_crayon" from="Player" to="." method="_on_player_spawn_crayon"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
