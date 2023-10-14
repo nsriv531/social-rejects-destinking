@@ -14,7 +14,6 @@ func _physics_process(delta):
 func pickColor():
 	rng.randomize()
 	var number = rng.randi_range(1,7)
-	print(number)
 	if number == 1:
 		crayon.play("blue_crayon")
 	elif number == 2:
