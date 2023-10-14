@@ -25,8 +25,6 @@ func _physics_process(delta):
 	
 func take_damage(damage):
 	hp -= damage
-	if hp == 3 :
-		$Health1.hide()
 	if hp <= 0:
 		queue_free()
 

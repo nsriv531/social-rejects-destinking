@@ -27,12 +27,12 @@ func _on_wall_right_body_entered(body):
 	if body.is_in_group("Player"):
 		global_position = Vector2(40, 861)
 		
-func enemies_destroyed(enemy_counter):
+'''func enemies_destroyed(enemy_counter):
 	counter = enemy_counter 
 	while counter > 0 :
 		if enemy_destroyed:
 			counter = counter - 1
-	get_tree().change_scene_to_file("res://scenes/L2.tscn")
+	get_tree().change_scene_to_file("res://scenes/L2.tscn")'''
 	
 func level_switch(level):
 	if level == 10:
@@ -46,10 +46,6 @@ func level_switch(level):
 
 
 
-func _on_timer_timeout():
-	var cactus = cacti.instantiate()
-	cactus.position = marker.position
-	$enemy.add_child(cactus)
 
 	
  
