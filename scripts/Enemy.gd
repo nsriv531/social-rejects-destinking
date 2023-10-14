@@ -15,5 +15,7 @@ func take_damage(damage):
 func _on_area_entered(area):
 	if area.is_in_group("playergroup"):
 		area.take_damage(1)
+		
+
 
 		

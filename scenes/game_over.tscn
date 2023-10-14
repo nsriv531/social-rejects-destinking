@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d1nuk8dguy68o"]
 
-[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_fn5g3"]
+[ext_resource type="Script" path="res://game_over.gd" id="1_fn5g3"]
 [ext_resource type="Texture2D" uid="uid://b6pcy3dtnt1wa" path="res://sprites/gameover.png" id="1_m0xhb"]
 [ext_resource type="FontFile" uid="uid://enutowvvlbei" path="res://sprites/Pixel_font.ttf" id="2_nvi6n"]
 [ext_resource type="Script" path="res://scripts/start_text.gd" id="3_hhy3v"]

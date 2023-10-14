@@ -5,12 +5,14 @@ var rng = RandomNumberGenerator.new()
 
 
 @onready var timer = $Timer
+@onready var timer_level = $Timer_level
 @onready var marker = $Marker2D_1
 @onready var cacti = preload("res://scenes/enemy.tscn")
 
 func _ready():
 	$Timer.start()
-
+	$Timer_level.start()
+	
 func _on_timer_timeout():
 	rng.randomize()
 	var number = rng.randi_range(1,10)
@@ -73,11 +75,7 @@ func _on_wall_right_body_entered(body):
 		global_position = Vector2(40, 861)
 		
 
-func level_switch(level):
-	if level == 10:
-		get_tree().change_scene_to_file("res://scenes/L2.tscn")
-	if level == 15:
-		get_tree().change_scene_to_file("res://scenes/L3.tscn")
-	if level == 1:
-		get_tree().change_scene_to_file("res://scenes/L4.tscn")
+func _on_timer_level_timeout():
+	get_tree().change_scene_to_file("res://scenes/L_2.tscn")
+	
 
