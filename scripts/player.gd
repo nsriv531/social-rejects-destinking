@@ -12,6 +12,7 @@ var hp = 3
 @onready var muzzle = $Muzzle
 @onready var kid = $Sprite2D/AnimationPlayer
 
+
 func _physics_process(delta):
 	kid.play("kid_small")
 	input_vector.x = Input.get_action_strength("right") - Input.get_action_strength("left")
@@ -31,8 +32,9 @@ func _on_area_entered(area):
 		if area.is_in_group("enemies"):
 			area.take_damage(1)	
 
-		
 func shoot_crayon():
 	emit_signal("spawn_crayon", muzzle.global_position)
+
+	
 
 
