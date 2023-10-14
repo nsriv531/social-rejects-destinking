@@ -41,7 +41,7 @@ func level_switch(level):
 		get_tree().change_scene_to_file("res://scenes/L3.tscn")
 	if level == 1:
 		get_tree().change_scene_to_file("res://scenes/L4.tscn")
-<<<<<<< HEAD
+
 
 
 
@@ -50,8 +50,8 @@ func _on_timer_timeout():
 	var cactus = cacti.instantiate()
 	cactus.position = marker.position
 	$enemy.add_child(cactus)
-=======
+
 	
  
 
->>>>>>> e7e79f18318b67a9ca33874840913dfcaf98981b
+
