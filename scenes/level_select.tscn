@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://gytlkk1u2ghw"]
+
+[ext_resource type="Script" path="res://scripts/level_select.gd" id="1_yxgqk"]
+[ext_resource type="Texture2D" uid="uid://cd1o8ypj0xqmc" path="res://sprites/level_select.png" id="2_u3yah"]
+[ext_resource type="FontFile" uid="uid://enutowvvlbei" path="res://sprites/Pixel_font.ttf" id="3_kaet2"]
+
+[node name="level_select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yxgqk")
+
+[node name="LevelSelect" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(501, 450)
+texture = ExtResource("2_u3yah")
+
+[node name="L1" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 41.0
+offset_top = 223.0
+offset_right = 332.0
+offset_bottom = 419.0
+
+[node name="L2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 380.0
+offset_top = 217.0
+offset_right = 615.0
+offset_bottom = 417.0
+
+[node name="L3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 690.0
+offset_top = 215.0
+offset_right = 925.0
+offset_bottom = 447.0
+
+[node name="L4" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 224.0
+offset_top = 470.0
+offset_right = 455.0
+offset_bottom = 681.0
+
+[node name="L5" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 541.0
+offset_top = 468.0
+offset_right = 780.0
+offset_bottom = 709.0
+
+[node name="back_button" type="Button" parent="."]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+offset_left = 324.0
+offset_top = 740.0
+offset_right = 631.0
+offset_bottom = 817.0
+theme_override_fonts/font = ExtResource("3_kaet2")
+theme_override_font_sizes/font_size = 27
+text = "BACK TO MAIN MENU"
+
+[connection signal="pressed" from="L1" to="." method="_on_l_1_pressed"]
+[connection signal="pressed" from="L2" to="." method="_on_l_1_pressed"]
+[connection signal="pressed" from="L3" to="." method="_on_l_1_pressed"]
+[connection signal="pressed" from="L4" to="." method="_on_l_1_pressed"]
+[connection signal="pressed" from="L5" to="." method="_on_l_1_pressed"]
+[connection signal="pressed" from="back_button" to="." method="_on_l_1_pressed"]
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
