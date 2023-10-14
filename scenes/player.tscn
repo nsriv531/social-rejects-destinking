@@ -71,7 +71,6 @@ scale = Vector2(10, 10)
 texture = ExtResource("2_afitg")
 hframes = 2
 vframes = 2
-frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {

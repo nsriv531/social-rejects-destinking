@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://cvyionws8h7oq"
+=======
+uid="uid://cfgds103qo71g"
+>>>>>>> 1b0ae4c7c692249c0e18f2aa64396e276ad02b90
 path="res://.godot/imported/pencil.png-9502567b47236a83138233e6c50880c2.ctex"
 metadata={
 "vram_texture": false
