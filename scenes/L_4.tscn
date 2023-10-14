@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://bdoqd0ohgs8ff"]
 
-[ext_resource type="Script" path="res://scripts/world.gd" id="1_t1g7y"]
+[ext_resource type="Script" path="res://scenes/L_4.gd" id="1_ajrpv"]
 [ext_resource type="Texture2D" uid="uid://d2amre3ti587u" path="res://sprites/g12level.png" id="2_xqlp1"]
-[ext_resource type="PackedScene" uid="uid://10a7wq5hjg3w" path="res://scenes/player.tscn" id="3_kinpp"]
-[ext_resource type="PackedScene" uid="uid://bwbw20gse1yo5" path="res://scenes/ant.tscn" id="4_n6clj"]
+[ext_resource type="PackedScene" uid="uid://yqo4cext26wh" path="res://player_adult.tscn" id="3_v61ms"]
+[ext_resource type="PackedScene" uid="uid://b3f6axhtg151f" path="res://scenes/boss.tscn" id="4_nc620"]
 
 [node name="L4" type="Node2D"]
-script = ExtResource("1_t1g7y")
+script = ExtResource("1_ajrpv")
 
 [node name="g12_backround" type="Sprite2D" parent="."]
 light_mask = 0
@@ -16,11 +16,11 @@ texture = ExtResource("2_xqlp1")
 region_enabled = true
 region_rect = Rect2(0, 0, 1000, 900)
 
-[node name="Player" parent="." instance=ExtResource("3_kinpp")]
-position = Vector2(403, 689)
+[node name="player_adult" parent="." instance=ExtResource("3_v61ms")]
+position = Vector2(490, 797)
 
-[node name="Enemy" parent="." instance=ExtResource("4_n6clj")]
-position = Vector2(421, -109)
+[node name="Boss" parent="." instance=ExtResource("4_nc620")]
+position = Vector2(-265, 78)
 
 [node name="Marker2D_1" type="Marker2D" parent="."]
 position = Vector2(70, -52)
@@ -59,11 +59,12 @@ wait_time = 3.5
 wait_time = 3.5
 
 [node name="enemy" type="Node2D" parent="."]
+position = Vector2(-354, 110)
 
 [node name="Timer3" type="Timer" parent="."]
 wait_time = 15.0
 
-[connection signal="spawn_crayon" from="Player" to="." method="_on_player_spawn_crayon"]
+[connection signal="spawn_crayon" from="player_adult" to="." method="_on_player_adult_spawn_crayon"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]

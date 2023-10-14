@@ -64,10 +64,7 @@ func _on_timer_timeout():
 var counter = 0
 
 
-func _on_player_teen_spawn_crayon(location):
-	var c = crayon.instantiate()
-	c.global_position = location
-	add_child(c)
+
 
 func _on_wall_right_body_entered(body):
 	if body.is_in_group("Player"):
@@ -78,8 +75,13 @@ func _on_timer_level_timeout():
 	get_tree().change_scene_to_file("res://scenes/black_screen2.tscn")
 	
 
-
+func _on_player_teen_spawn_crayon(location):
+	var c = crayon.instantiate()
+	c.global_position = location
+	add_child(c)
 
 
 func _on_timer_3_timeout():
 	pass # Replace with function body.
+
+

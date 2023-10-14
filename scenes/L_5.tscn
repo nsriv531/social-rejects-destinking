@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5a3wka6gmria"]
+[gd_scene load_steps=6 format=3 uid="uid://c5a3wka6gmria"]
 
-[ext_resource type="Script" path="res://scripts/world.gd" id="1_i17pw"]
+[ext_resource type="Script" path="res://scenes/L_5.gd" id="1_e1wy3"]
 [ext_resource type="Texture2D" uid="uid://4dxe6377gvtr" path="res://sprites/unilevel.png" id="2_7befk"]
-[ext_resource type="PackedScene" uid="uid://10a7wq5hjg3w" path="res://scenes/player.tscn" id="3_uen0g"]
-[ext_resource type="PackedScene" uid="uid://bwbw20gse1yo5" path="res://scenes/ant.tscn" id="4_jyjbw"]
+[ext_resource type="Script" path="res://player_adult.gd" id="3_ksfmr"]
+[ext_resource type="PackedScene" uid="uid://yqo4cext26wh" path="res://player_adult.tscn" id="4_k7ida"]
+[ext_resource type="PackedScene" uid="uid://b3f6axhtg151f" path="res://scenes/boss.tscn" id="5_mopdh"]
 
 [node name="L5" type="Node2D"]
-script = ExtResource("1_i17pw")
+script = ExtResource("1_e1wy3")
 
 [node name="uni_backround" type="Sprite2D" parent="."]
 light_mask = 0
@@ -15,12 +16,14 @@ scale = Vector2(1.1045, 0.997222)
 texture = ExtResource("2_7befk")
 region_enabled = true
 region_rect = Rect2(0, 0, 1000, 900)
+script = ExtResource("3_ksfmr")
 
-[node name="Player" parent="." instance=ExtResource("3_uen0g")]
-position = Vector2(403, 689)
+[node name="player_adult" parent="." instance=ExtResource("4_k7ida")]
+position = Vector2(498, 780)
 
-[node name="Enemy" parent="." instance=ExtResource("4_jyjbw")]
-position = Vector2(421, -109)
+[node name="Boss" parent="." instance=ExtResource("5_mopdh")]
+position = Vector2(-284, 326)
+script = ExtResource("3_ksfmr")
 
 [node name="Marker2D_1" type="Marker2D" parent="."]
 position = Vector2(70, -52)
@@ -59,11 +62,12 @@ wait_time = 3.5
 wait_time = 3.5
 
 [node name="enemy" type="Node2D" parent="."]
+position = Vector2(-477, 322)
 
 [node name="Timer3" type="Timer" parent="."]
 wait_time = 15.0
 
-[connection signal="spawn_crayon" from="Player" to="." method="_on_player_spawn_crayon"]
+[connection signal="spawn_crayon" from="player_adult" to="." method="_on_player_adult_spawn_crayon"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]

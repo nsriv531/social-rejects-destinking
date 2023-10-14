@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://djqdaplofsin0"]
+[gd_scene load_steps=4 format=3 uid="uid://djqdaplofsin0"]
 
 [ext_resource type="Texture2D" uid="uid://c24ls463u5f7p" path="res://sprites/mathevil_enemy.png" id="1_4c51y"]
+[ext_resource type="Script" path="res://scenes/math.gd" id="1_x6ll3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3w3v5"]
 size = Vector2(81, 68)
 
-[node name="math" type="Area2D"]
+[node name="math" type="Area2D" groups=["enemies"]]
+script = ExtResource("1_x6ll3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -15,3 +17,5 @@ texture = ExtResource("1_4c51y")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_3w3v5")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

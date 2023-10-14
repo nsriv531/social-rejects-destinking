@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3f6axhtg151f"]
+
+[ext_resource type="Script" path="res://Area2D.gd" id="1_cxjoo"]
+[ext_resource type="Texture2D" uid="uid://capkgkavadwxp" path="res://sprites/aiboss.png" id="2_e7qqw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2xyp"]
+size = Vector2(82, 77)
+
+[node name="Boss" type="Area2D"]
+script = ExtResource("1_cxjoo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("2_e7qqw")
+hframes = 2
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_h2xyp")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
