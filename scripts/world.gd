@@ -56,8 +56,6 @@ func level_switch(level):
 	if level = 1 :
 		get_tree().change_scene_to_file("res://scenes/L4.tscn")
 
- 
-
 
 
 
