@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b21aikeqtamm5"]
+
+[ext_resource type="Script" path="res://scripts/Player_teen.gd" id="1_7ykjl"]
+[ext_resource type="Texture2D" uid="uid://bbaf6l1gaqqor" path="res://sprites/cancerboy_teen.png" id="2_arj3w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6jwa"]
+size = Vector2(58, 107)
+
+[node name="Player_teen" type="Area2D"]
+script = ExtResource("1_7ykjl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(8, 8)
+texture = ExtResource("2_arj3w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -5.5)
+shape = SubResource("RectangleShape2D_t6jwa")
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(-1, -70)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

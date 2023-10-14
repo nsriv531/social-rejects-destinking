@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm4f8gl1t4ykc"]
+
+[ext_resource type="Texture2D" uid="uid://ddq02bt71nvl0" path="res://sprites/book.png" id="1_wp8y0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wn7b7"]
+size = Vector2(55, 79)
+
+[node name="Book" type="Area2D"]
+collision_layer = 4
+collision_mask = 11
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("1_wp8y0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 0.5)
+shape = SubResource("RectangleShape2D_wn7b7")

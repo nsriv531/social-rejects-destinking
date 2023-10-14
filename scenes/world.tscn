@@ -21,7 +21,7 @@ region_rect = Rect2(0, 0, 1000, 900)
 position = Vector2(403, 689)
 
 [node name="Enemy" parent="." instance=ExtResource("4_q0fwq")]
-position = Vector2(421, -109)
+position = Vector2(-368, 23)
 
 [node name="Marker2D_1" type="Marker2D" parent="."]
 position = Vector2(70, -52)
