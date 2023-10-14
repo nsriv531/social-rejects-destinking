@@ -20,6 +20,10 @@ config/icon="res://sprites/icon.svg"
 window/size/viewport_width=1000
 window/size/viewport_height=900
 
+[dotnet]
+
+project/assembly_name="Crayons to Calculators"
+
 [input]
 
 left={
