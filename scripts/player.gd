@@ -26,7 +26,11 @@ func _physics_process(delta):
 func take_damage(damage):
 	hp -= damage
 	if hp <= 0:
+<<<<<<< HEAD
 		get_tree().change_scene_to_file("res://scenes/")
+=======
+		get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+>>>>>>> 18a02916390ce02fceaf8c840438ed20fe19253f
 
 func _on_area_entered(area):
 		if area.is_in_group("enemies"):
