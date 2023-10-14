@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgol2ajohl7kn"
-path="res://.godot/imported/pencil.png-9502567b47236a83138233e6c50880c2.ctex"
+uid="uid://bbaf6l1gaqqor"
+path="res://.godot/imported/cancerboy_teen.png-2b7e7dd8f6a7afbaa92d610245fe7560.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/pencil.png"
-dest_files=["res://.godot/imported/pencil.png-9502567b47236a83138233e6c50880c2.ctex"]
+source_file="res://sprites/cancerboy_teen.png"
+dest_files=["res://.godot/imported/cancerboy_teen.png-2b7e7dd8f6a7afbaa92d610245fe7560.ctex"]
 
 [params]
 

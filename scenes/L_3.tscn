@@ -1,19 +1,19 @@
 [gd_scene load_steps=6 format=3 uid="uid://cpeyely38ffn8"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_qe86s"]
-[ext_resource type="Texture2D" uid="uid://brboer6j2ukb2" path="res://sprites/sandbox.png" id="2_t8e02"]
+[ext_resource type="Texture2D" uid="uid://ct5tpc2osrk6y" path="res://sprites/g9level.png" id="2_t3doy"]
 [ext_resource type="PackedScene" uid="uid://10a7wq5hjg3w" path="res://scenes/player.tscn" id="3_a6rky"]
 [ext_resource type="PackedScene" uid="uid://bwbw20gse1yo5" path="res://scenes/enemy.tscn" id="4_aec68"]
 [ext_resource type="PackedScene" uid="uid://1s42mu7p5uax" path="res://scenes/health_1.tscn" id="5_ddlgy"]
 
-[node name="L1" type="Node2D"]
+[node name="L3" type="Node2D"]
 script = ExtResource("1_qe86s")
 
-[node name="Sand_backround" type="Sprite2D" parent="."]
+[node name="grade6_background" type="Sprite2D" parent="."]
 light_mask = 0
 position = Vector2(503, 451)
 scale = Vector2(1.1045, 0.997222)
-texture = ExtResource("2_t8e02")
+texture = ExtResource("2_t3doy")
 region_enabled = true
 region_rect = Rect2(0, 0, 1000, 900)
 
