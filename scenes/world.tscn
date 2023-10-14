@@ -64,10 +64,10 @@ wait_time = 3.5
 [node name="Health1" parent="." instance=ExtResource("5_xbo42")]
 position = Vector2(-142, 604)
 
-[node name="Timer_level" type="Timer" parent="."]
+[node name="Timer3" type="Timer" parent="."]
 wait_time = 20.0
 
 [connection signal="spawn_crayon" from="Player" to="." method="_on_player_spawn_crayon"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer_level" to="." method="_on_timer_level_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]

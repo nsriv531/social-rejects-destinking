@@ -5,15 +5,16 @@ var rng = RandomNumberGenerator.new()
 
 
 @onready var timer = $Timer
-@onready var timer_level = $Timer_level
+@onready var timer_level = $Timer3
 @onready var marker = $Marker2D_1
 @onready var cacti = preload("res://scenes/ant.tscn")
 @onready var cactii = preload("res://scenes/beetle.tscn")
 @onready var cactiii = preload("res://scenes/spider.tscn")
+@onready var black_screen = preload("res://scenes/win_screen.tscn")
 
 func _ready():
 	$Timer.start()
-	$Timer_level.start()
+	$Timer3.start()
 	
 func _on_timer_timeout():
 	rng.randomize()
@@ -76,9 +77,9 @@ func _on_player_spawn_crayon(location):
 func _on_wall_right_body_entered(body):
 	if body.is_in_group("Player"):
 		global_position = Vector2(40, 861)
-		
-
-func _on_timer_level_timeout():
-	get_tree().change_scene_to_file("res://scenes/L_2.tscn")
 	
 
+
+
+func _on_timer_3_timeout():
+	get_tree().change_scene_to_file("res://scenes/win_screen.tscn")

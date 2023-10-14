@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cblx7fafd38gd"]
+[gd_scene load_steps=5 format=3 uid="uid://cblx7fafd38gd"]
 
 [ext_resource type="Script" path="res://L_2.gd" id="1_7r1gl"]
 [ext_resource type="Texture2D" uid="uid://dd3al24fmw6gj" path="res://sprites/g6level.png" id="2_p8rgl"]
 [ext_resource type="PackedScene" uid="uid://b21aikeqtamm5" path="res://scenes/player_teen.tscn" id="3_joshe"]
 [ext_resource type="PackedScene" uid="uid://sqpirv4vibih" path="res://scenes/enemy_teen.tscn" id="4_me4u5"]
-[ext_resource type="PackedScene" uid="uid://1s42mu7p5uax" path="res://scenes/health_1.tscn" id="5_a82aw"]
 
 [node name="L2" type="Node2D"]
 script = ExtResource("1_7r1gl")
@@ -60,9 +59,10 @@ wait_time = 3.5
 
 [node name="enemy" type="Node2D" parent="."]
 
-[node name="Health1" parent="." instance=ExtResource("5_a82aw")]
-position = Vector2(-142, 604)
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 15.0
 
 [connection signal="spawn_crayon" from="Player_teen" to="." method="_on_player_teen_spawn_crayon"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]

@@ -5,12 +5,12 @@ var rng = RandomNumberGenerator.new()
 
 
 @onready var timer = $Timer
-#@onready var timer_level = $Timer_level
+@onready var timer_level = $Timer3
 @onready var marker = $Marker2D_1
 @onready var cacti = preload("res://scenes/enemy_teen.tscn")
 @onready var cactii = preload("res://scenes/Book.tscn")
 @onready var cactiii = preload("res://scenes/math.tscn")
-
+@onready var black_screen = preload("res://scenes/black_screen2.tscn")
 func _ready():
 	$Timer.start()
 #	$Timer_level.start()
@@ -79,7 +79,11 @@ func _on_wall_right_body_entered(body):
 		
 
 func _on_timer_level_timeout():
-	get_tree().change_scene_to_file("res://scenes/L_2.tscn")
+	get_tree().change_scene_to_file("res://scenes/black_screen2.tscn")
 	
 
 
+
+
+func _on_timer_3_timeout():
+	pass # Replace with function body.

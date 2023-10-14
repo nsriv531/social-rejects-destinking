@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0rtem4un0585"]
+
+[ext_resource type="Script" path="res://black_screen.gd" id="1_adqw7"]
+[ext_resource type="Texture2D" uid="uid://bk4ghjkwdmquk" path="res://sprites/between_levels.png" id="2_vc75m"]
+
+[node name="black_screen" type="Node2D"]
+script = ExtResource("1_adqw7")
+
+[node name="BetweenLevels" type="Sprite2D" parent="."]
+position = Vector2(1509, -464)
+texture = ExtResource("2_vc75m")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
