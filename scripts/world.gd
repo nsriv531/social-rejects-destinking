@@ -49,15 +49,15 @@ func enemies_destroyed(enemy_counter):
 	while counter > 0 :
 		if enemy_destroyed:
 			counter = counter - 1
-	return enemy_counter
+	return enemy_counter'''
 	
 func level_switch(level):
-	if level = 10:
+	if level == 10:
 		get_tree().change_scene_to_file("res://scenes/L2.tscn")
-	if level = 15:
+	if level == 15:
 		get_tree().change_scene_to_file("res://scenes/L3.tscn")
-	if level = 1:
-		get_tree().change_scene_to_file("res://scenes/L4.tscn")'''
+	if level == 1:
+		get_tree().change_scene_to_file("res://scenes/L4.tscn")
 	
  
 

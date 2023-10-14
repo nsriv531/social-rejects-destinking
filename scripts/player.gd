@@ -25,7 +25,12 @@ func _physics_process(delta):
 	
 func take_damage(damage):
 	hp -= damage
+	if hp == 2 :
+		$Health1.queue_free()
+	if hp == 1 :
+		$Health2.queue_free()
 	if hp <= 0:
+		$Health3.queue_free()
 		queue_free()
 
 func _on_area_entered(area):
