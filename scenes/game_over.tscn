@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1nuk8dguy68o"]
+[gd_scene load_steps=5 format=3 uid="uid://d1nuk8dguy68o"]
 
+[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_fn5g3"]
 [ext_resource type="Texture2D" uid="uid://b6pcy3dtnt1wa" path="res://sprites/gameover.png" id="1_m0xhb"]
 [ext_resource type="FontFile" uid="uid://enutowvvlbei" path="res://sprites/Pixel_font.ttf" id="2_nvi6n"]
 [ext_resource type="Script" path="res://scripts/start_text.gd" id="3_hhy3v"]
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fn5g3")
 
 [node name="backround" type="Sprite2D" parent="."]
 position = Vector2(494, 449)
@@ -19,12 +21,13 @@ texture = ExtResource("1_m0xhb")
 [node name="start_text" type="TextEdit" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 281.0
-offset_top = 545.0
-offset_right = 665.0
-offset_bottom = 601.0
+offset_left = 175.0
+offset_top = 609.0
+offset_right = 813.0
+offset_bottom = 745.0
 theme_override_colors/background_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0.27451, 0.211765, 1)
 theme_override_fonts/font = ExtResource("2_nvi6n")
 theme_override_font_sizes/font_size = 27
-text = "-PRESS SPACE TO RETURN TO MAIN MENU-"
+text = "-PRESS ENTER TO RETURN TO MAIN MENU-"
 script = ExtResource("3_hhy3v")
