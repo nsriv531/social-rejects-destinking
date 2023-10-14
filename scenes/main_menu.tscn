@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnhvvskxb5vo1"]
+[gd_scene load_steps=6 format=3 uid="uid://bnhvvskxb5vo1"]
 
 [ext_resource type="Texture2D" uid="uid://ccq4w3xiav7x" path="res://sprites/title.png" id="1_btrtj"]
 [ext_resource type="FontFile" uid="uid://enutowvvlbei" path="res://sprites/Pixel_font.ttf" id="2_25gsi"]
 [ext_resource type="Script" path="res://scripts/start_text.gd" id="3_a4606"]
+[ext_resource type="AudioStream" uid="uid://byg4kdic7xptx" path="res://sounds/mainmenu_song.mp3" id="4_b0pms"]
 
 [sub_resource type="GDScript" id="GDScript_m5yw7"]
 script/source = "extends Control
+
+@onready var audiothing = $AudioStreamPlayer
 
 func _physics_process(_delta):
 	if Input.get_action_strength(\"shoot\"):
@@ -58,5 +61,9 @@ offset_bottom = 843.0
 theme_override_fonts/font = ExtResource("2_25gsi")
 theme_override_font_sizes/font_size = 27
 text = "LEVEL SELECT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_b0pms")
+volume_db = -10.0
 
 [connection signal="pressed" from="level_select" to="." method="_on_level_select_pressed"]
