@@ -11,7 +11,7 @@ var hp = 3
 
 @onready var muzzle = $Muzzle
 @onready var kid = $Sprite2D/AnimationPlayer
-@onready var health1 = $Health1
+#@onready var health1 = $Health1
 
 func _physics_process(delta):
 	kid.play("kid_small")
@@ -26,7 +26,7 @@ func _physics_process(delta):
 func take_damage(damage):
 	hp -= damage
 	if hp <= 0:
-		get_tree().change_scene_to_file("res://scenes/)
+		get_tree().change_scene_to_file("res://scenes/")
 
 func _on_area_entered(area):
 		if area.is_in_group("enemies"):

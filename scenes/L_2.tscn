@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_u38n4"]
 [ext_resource type="Texture2D" uid="uid://dd3al24fmw6gj" path="res://sprites/g6level.png" id="2_p8rgl"]
 [ext_resource type="PackedScene" uid="uid://10a7wq5hjg3w" path="res://scenes/player.tscn" id="3_gjfnc"]
-[ext_resource type="PackedScene" uid="uid://bwbw20gse1yo5" path="res://scenes/enemy.tscn" id="4_1qvpp"]
+[ext_resource type="PackedScene" uid="uid://bwbw20gse1yo5" path="res://scenes/ant.tscn" id="4_1qvpp"]
 [ext_resource type="PackedScene" uid="uid://1s42mu7p5uax" path="res://scenes/health_1.tscn" id="5_a82aw"]
 
 [node name="L2" type="Node2D"]
@@ -64,6 +64,5 @@ wait_time = 3.5
 [node name="Health1" parent="." instance=ExtResource("5_a82aw")]
 position = Vector2(-142, 604)
 
-[connection signal="spawn_crayon" from="Player" to="." method="_on_player_spawn_crayon"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]

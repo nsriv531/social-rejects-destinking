@@ -6,7 +6,9 @@ var rng = RandomNumberGenerator.new()
 
 @onready var timer = $Timer
 @onready var marker = $Marker2D_1
-@onready var cacti = preload("res://scenes/enemy.tscn")
+@onready var cacti = preload("res://scenes/ant.tscn")
+@onready var cactii = preload("res://scenes/beetle.tscn")
+@onready var cactiii = preload("res://scenes/spider.tscn")
 
 func _ready():
 	$Timer.start()
@@ -14,16 +16,17 @@ func _ready():
 func _on_timer_timeout():
 	rng.randomize()
 	var number = rng.randi_range(1,10)
+	print(number)
 	if number == 1:
 		var cactus = cacti.instantiate()
 		cactus.position = $Marker2D_1.position
 		$enemy.add_child(cactus)
 	elif number == 2:
-		var cactus = cacti.instantiate()
+		var cactus = cactii.instantiate()
 		cactus.position = $Marker2D_2.position
 		$enemy.add_child(cactus)
 	elif number == 3:
-		var cactus = cacti.instantiate()
+		var cactus = cactii.instantiate()
 		cactus.position = $Marker2D_3.position
 		$enemy.add_child(cactus)
 	elif number == 4:
@@ -31,11 +34,11 @@ func _on_timer_timeout():
 		cactus.position = $Marker2D_4.position
 		$enemy.add_child(cactus)
 	elif number == 5:
-		var cactus = cacti.instantiate()
+		var cactus = cactii.instantiate()
 		cactus.position = $Marker2D_5.position
 		$enemy.add_child(cactus)
 	elif number == 6:
-		var cactus = cacti.instantiate()
+		var cactus = cactiii.instantiate()
 		cactus.position = $Marker2D_6.position
 		$enemy.add_child(cactus)
 	elif number == 7:
@@ -43,11 +46,11 @@ func _on_timer_timeout():
 		cactus.position = $Marker2D_7.position
 		$enemy.add_child(cactus)
 	elif number == 8:
-		var cactus = cacti.instantiate()
+		var cactus = cactii.instantiate()
 		cactus.position = $Marker2D_8.position
 		$enemy.add_child(cactus)
 	elif number == 9:
-		var cactus = cacti.instantiate()
+		var cactus = cactiii.instantiate()
 		cactus.position = $Marker2D_9.position
 		$enemy.add_child(cactus)
 	elif number == 10:
