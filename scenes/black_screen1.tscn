@@ -1,16 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://6xlmbgj4fqtq"]
+[gd_scene load_steps=4 format=3 uid="uid://6xlmbgj4fqtq"]
 
-[ext_resource type="Script" path="res://black_screen.gd" id="1_w528v"]
+[ext_resource type="Script" path="res://scripts/black_screen1.gd" id="1_jcml3"]
 [ext_resource type="Texture2D" uid="uid://bk4ghjkwdmquk" path="res://sprites/between_levels.png" id="2_bxtjw"]
+[ext_resource type="FontFile" uid="uid://enutowvvlbei" path="res://sprites/Pixel_font.ttf" id="3_t0hlp"]
 
 [node name="black_screen" type="Node2D"]
-script = ExtResource("1_w528v")
+script = ExtResource("1_jcml3")
 
 [node name="BetweenLevels" type="Sprite2D" parent="."]
-position = Vector2(1509, -464)
+position = Vector2(1502, -459)
 texture = ExtResource("2_bxtjw")
+metadata/_edit_lock_ = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
+
+[node name="next level text" type="TextEdit" parent="."]
+offset_left = 315.0
+offset_top = 369.0
+offset_right = 684.0
+offset_bottom = 472.0
+theme_override_fonts/font = ExtResource("3_t0hlp")
+theme_override_font_sizes/font_size = 50
+text = "NEXT LEVEL"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

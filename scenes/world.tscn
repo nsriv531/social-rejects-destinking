@@ -18,7 +18,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1000, 900)
 
 [node name="Player" parent="." instance=ExtResource("3_dqw1q")]
-position = Vector2(403, 689)
+position = Vector2(512, 692)
 
 [node name="Enemy" parent="." instance=ExtResource("4_q0fwq")]
 position = Vector2(-368, 23)
@@ -61,11 +61,11 @@ wait_time = 3.5
 
 [node name="enemy" type="Node2D" parent="."]
 
-[node name="Health1" parent="." instance=ExtResource("5_xbo42")]
-position = Vector2(-142, 604)
-
 [node name="Timer3" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 25.0
+
+[node name="Node2D" parent="." instance=ExtResource("5_xbo42")]
+position = Vector2(-142, 604)
 
 [connection signal="spawn_crayon" from="Player" to="." method="_on_player_spawn_crayon"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

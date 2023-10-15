@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cblx7fafd38gd"]
+[gd_scene load_steps=6 format=3 uid="uid://srfr28tyj41w"]
 
-[ext_resource type="Script" path="res://L_2.gd" id="1_7r1gl"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_u38n4"]
 [ext_resource type="Texture2D" uid="uid://dd3al24fmw6gj" path="res://sprites/g6level.png" id="2_p8rgl"]
-[ext_resource type="PackedScene" uid="uid://b21aikeqtamm5" path="res://scenes/player_teen.tscn" id="3_joshe"]
-[ext_resource type="PackedScene" uid="uid://sqpirv4vibih" path="res://scenes/enemy_teen.tscn" id="4_me4u5"]
+[ext_resource type="PackedScene" uid="uid://10a7wq5hjg3w" path="res://scenes/player.tscn" id="3_gjfnc"]
+[ext_resource type="PackedScene" uid="uid://bwbw20gse1yo5" path="res://scenes/enemy.tscn" id="4_1qvpp"]
+[ext_resource type="PackedScene" uid="uid://1s42mu7p5uax" path="res://scenes/health_1.tscn" id="5_a82aw"]
 
 [node name="L2" type="Node2D"]
-script = ExtResource("1_7r1gl")
+script = ExtResource("1_u38n4")
 
-[node name="g6_backround" type="Sprite2D" parent="."]
+[node name="grade6_backround" type="Sprite2D" parent="."]
 light_mask = 0
 position = Vector2(503, 451)
 scale = Vector2(1.1045, 0.997222)
@@ -16,41 +17,17 @@ texture = ExtResource("2_p8rgl")
 region_enabled = true
 region_rect = Rect2(0, 0, 1000, 900)
 
-[node name="Player_teen" parent="." instance=ExtResource("3_joshe")]
-position = Vector2(488, 766)
+[node name="Player" parent="." instance=ExtResource("3_gjfnc")]
+position = Vector2(403, 689)
 
-[node name="Enemy_teen" parent="." instance=ExtResource("4_me4u5")]
-position = Vector2(-402, 283)
+[node name="Enemy" parent="." instance=ExtResource("4_1qvpp")]
+position = Vector2(421, -109)
 
-[node name="Marker2D_1" type="Marker2D" parent="."]
-position = Vector2(70, -52)
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(717, -53)
 
-[node name="Marker2D_2" type="Marker2D" parent="."]
-position = Vector2(168, -53)
-
-[node name="Marker2D_3" type="Marker2D" parent="."]
-position = Vector2(260, -55)
-
-[node name="Marker2D_4" type="Marker2D" parent="."]
-position = Vector2(349, -48)
-
-[node name="Marker2D_5" type="Marker2D" parent="."]
-position = Vector2(447, -49)
-
-[node name="Marker2D_6" type="Marker2D" parent="."]
-position = Vector2(539, -51)
-
-[node name="Marker2D_7" type="Marker2D" parent="."]
-position = Vector2(619, -51)
-
-[node name="Marker2D_8" type="Marker2D" parent="."]
-position = Vector2(717, -52)
-
-[node name="Marker2D_9" type="Marker2D" parent="."]
-position = Vector2(809, -54)
-
-[node name="Marker2D_10" type="Marker2D" parent="."]
-position = Vector2(911, -50)
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(907, -52)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.5
@@ -60,10 +37,8 @@ wait_time = 3.5
 
 [node name="enemy" type="Node2D" parent="."]
 
-[node name="Timer3" type="Timer" parent="."]
-wait_time = 15.0
+[node name="Health1" parent="." instance=ExtResource("5_a82aw")]
+position = Vector2(-142, 604)
 
-[connection signal="spawn_crayon" from="Player_teen" to="." method="_on_player_teen_spawn_crayon"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout" flags=18]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout" flags=18]

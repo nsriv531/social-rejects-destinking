@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://baa8x2a2u3idq"]
 
-[ext_resource type="Script" path="res://scenes/L_3.gd" id="1_5fdr2"]
+[ext_resource type="Script" path="res://scripts/L_3.gd" id="1_ouvy7"]
 [ext_resource type="Texture2D" uid="uid://ct5tpc2osrk6y" path="res://sprites/g9level.png" id="2_t3doy"]
 [ext_resource type="PackedScene" uid="uid://b21aikeqtamm5" path="res://scenes/player_teen.tscn" id="3_0ghe3"]
 [ext_resource type="PackedScene" uid="uid://sqpirv4vibih" path="res://scenes/enemy_teen.tscn" id="4_ed7yf"]
 
 [node name="L3" type="Node2D"]
-script = ExtResource("1_5fdr2")
+script = ExtResource("1_ouvy7")
 
 [node name="g9_backround" type="Sprite2D" parent="."]
 light_mask = 0
@@ -62,7 +62,7 @@ wait_time = 3.5
 position = Vector2(-127, -51)
 
 [node name="Timer3" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 25.0
 
 [connection signal="spawn_crayon" from="Player_teen" to="." method="_on_player_teen_spawn_crayon"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

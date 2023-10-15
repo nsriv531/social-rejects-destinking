@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://yqo4cext26wh"]
+
+[ext_resource type="Script" path="res://player_adult.gd" id="1_fbx8u"]
+[ext_resource type="Texture2D" uid="uid://dl68qk2uftb48" path="res://sprites/cancerboy_adult.png" id="2_ky8r5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ulo0f"]
+size = Vector2(62, 111)
+
+[node name="player_adult" type="Area2D" groups=["playergroup"]]
+light_mask = 2
+visibility_layer = 21
+script = ExtResource("1_fbx8u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(8, 8)
+texture = ExtResource("2_ky8r5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 13
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ulo0f")
+
+[node name="Muzzle" type="Marker2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

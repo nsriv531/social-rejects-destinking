@@ -1,13 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://c5a3wka6gmria"]
 
-[ext_resource type="Script" path="res://scenes/L_5.gd" id="1_e1wy3"]
+[ext_resource type="Script" path="res://scripts/L_5.gd" id="1_j46lf"]
 [ext_resource type="Texture2D" uid="uid://4dxe6377gvtr" path="res://sprites/unilevel.png" id="2_7befk"]
 [ext_resource type="Script" path="res://player_adult.gd" id="3_ksfmr"]
-[ext_resource type="PackedScene" uid="uid://yqo4cext26wh" path="res://player_adult.tscn" id="4_k7ida"]
-[ext_resource type="PackedScene" uid="uid://b3f6axhtg151f" path="res://scenes/boss.tscn" id="5_mopdh"]
+[ext_resource type="PackedScene" uid="uid://b21aikeqtamm5" path="res://scenes/player_teen.tscn" id="4_7edo4"]
+[ext_resource type="PackedScene" uid="uid://sqpirv4vibih" path="res://scenes/enemy_teen.tscn" id="5_f3rmn"]
 
 [node name="L5" type="Node2D"]
-script = ExtResource("1_e1wy3")
+script = ExtResource("1_j46lf")
 
 [node name="uni_backround" type="Sprite2D" parent="."]
 light_mask = 0
@@ -18,12 +18,11 @@ region_enabled = true
 region_rect = Rect2(0, 0, 1000, 900)
 script = ExtResource("3_ksfmr")
 
-[node name="player_adult" parent="." instance=ExtResource("4_k7ida")]
-position = Vector2(498, 780)
+[node name="Player_teen" parent="." instance=ExtResource("4_7edo4")]
+position = Vector2(570, 752)
 
-[node name="Boss" parent="." instance=ExtResource("5_mopdh")]
-position = Vector2(-284, 326)
-script = ExtResource("3_ksfmr")
+[node name="Enemy_teen" parent="." instance=ExtResource("5_f3rmn")]
+position = Vector2(-378, 61)
 
 [node name="Marker2D_1" type="Marker2D" parent="."]
 position = Vector2(70, -52)
@@ -67,7 +66,6 @@ position = Vector2(-477, 322)
 [node name="Timer3" type="Timer" parent="."]
 wait_time = 15.0
 
-[connection signal="spawn_crayon" from="player_adult" to="." method="_on_player_adult_spawn_crayon"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]

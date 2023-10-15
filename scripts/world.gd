@@ -82,4 +82,4 @@ func _on_wall_right_body_entered(body):
 
 
 func _on_timer_3_timeout():
-	get_tree().change_scene_to_file("res://scenes/win_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/black_screen1.tscn")

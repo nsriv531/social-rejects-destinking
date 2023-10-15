@@ -25,6 +25,7 @@ func _physics_process(delta):
 func take_damage(damage):
 	hp -= damage
 	if hp <= 0:
+		queue_free()
 		get_tree().change_scene_to_file("res://scenes/")
 
 

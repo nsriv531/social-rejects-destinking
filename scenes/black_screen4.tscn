@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://d4gk82aknhcmj"]
 
-[ext_resource type="Script" path="res://black_screen.gd" id="1_6y1hb"]
+[ext_resource type="Script" path="res://scripts/black_screen4.gd" id="1_gyo7q"]
 [ext_resource type="Texture2D" uid="uid://bk4ghjkwdmquk" path="res://sprites/between_levels.png" id="2_af4cf"]
 
 [node name="black_screen" type="Node2D"]
-script = ExtResource("1_6y1hb")
+script = ExtResource("1_gyo7q")
 
 [node name="BetweenLevels" type="Sprite2D" parent="."]
 position = Vector2(1509, -464)

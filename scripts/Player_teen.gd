@@ -22,7 +22,8 @@ func _physics_process(delta):
 func take_damage(damage):
 	hp -= damage
 	if hp <= 0:
-		get_tree().change_scene_to_file("res://scenes/")
+		queue_free()
+	
 
 func _on_area_entered(area):
 	if area.is_in_group("enemies"):

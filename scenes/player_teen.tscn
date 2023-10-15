@@ -7,6 +7,8 @@
 size = Vector2(58, 107)
 
 [node name="Player_teen" type="Area2D" groups=["playergroup"]]
+light_mask = 2
+visibility_layer = 21
 script = ExtResource("1_7ykjl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
